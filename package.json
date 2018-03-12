@@ -1,6 +1,6 @@
 {
   "name": "youtube-stream",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
@@ -20,9 +20,12 @@
   },
   "scripts": {
     "webpack": "webpack",
-    "start": "npm run webpack && nodemon --exec babel-node -- bin/www"
+    "start": "node bin/www"
   },
   "devDependencies": {
     "babel-preset-es2016": "^6.24.1"
+  },
+  "engines": {
+    "node":"8.9.4"
   }
 }
