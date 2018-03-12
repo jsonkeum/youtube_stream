@@ -49,7 +49,7 @@ class VideoPage extends React.Component {
 			let video = this.state.video;
 			let videoPlayer;
 			if(video.status.embeddable){
-				let embed = video.player.embedHtml.replace(`//www.youtube.com/embed/${this.props.match.params.videoId}`, `//www.youtube.com/embed/${this.props.match.params.videoId}?rel=0&autoplay=1`);
+				let embed = video.player.embedHtml.replace(`//www.youtube.com/embed/${this.props.match.params.videoId}`, `//www.youtube.com/embed/${this.props.match.params.videoId}?rel=0&autoplay=1&playsinline=1`);
 				videoPlayer = ReactHtmlParser(embed);
 			} else {
 				videoPlayer = <h3>Video is not playable!</h3>;

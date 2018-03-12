@@ -35459,7 +35459,7 @@ class VideoPage extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component 
 			let video = this.state.video;
 			let videoPlayer;
 			if (video.status.embeddable) {
-				let embed = video.player.embedHtml.replace(`//www.youtube.com/embed/${this.props.match.params.videoId}`, `//www.youtube.com/embed/${this.props.match.params.videoId}?rel=0&autoplay=1`);
+				let embed = video.player.embedHtml.replace(`//www.youtube.com/embed/${this.props.match.params.videoId}`, `//www.youtube.com/embed/${this.props.match.params.videoId}?rel=0&autoplay=1&playsinline=1`);
 				videoPlayer = __WEBPACK_IMPORTED_MODULE_1_react_html_parser___default()(embed);
 			} else {
 				videoPlayer = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
