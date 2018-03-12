@@ -8,7 +8,7 @@ const YAPI = require('../yapi');
 require('dotenv').config();
 
 //Instantiate the google api object using secrets.
-var gapi = new GAPI(process.env.GCLIENTID, process.env.GSECRET, process.env.TESTREDIRECT)
+var gapi = new GAPI(process.env.GCLIENTID, process.env.GSECRET, process.env.REDIRECTURI)
 var yapi = new YAPI(process.env.GAPIKEY);
 
 /*

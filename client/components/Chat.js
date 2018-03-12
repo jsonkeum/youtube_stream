@@ -57,7 +57,7 @@ class Chat extends React.Component {
 	*/
 	getChats(){
 		if(authed){
-			axios.get(`http://localhost:8080/getchats/${this.props.chatID}`)
+			axios.get(`${window.location.protocol}//${window.location.hostname}/getchats/${this.props.chatID}`)
 			.then(res => {
 				if(res.data.hasOwnProperty('error')){
 					if(res.data.error.code == 403) {
@@ -85,7 +85,7 @@ class Chat extends React.Component {
 		Grabs the polling interval time and page token from response.
 	*/
 	nextChats(){
-		axios.get(`http://localhost:8080/nextchats/${this.props.chatID}/${this.state.nextPageToken}`)
+		axios.get(`${window.location.protocol}//${window.location.hostname}/nextchats/${this.props.chatID}/${this.state.nextPageToken}`)
 		.then(res => {
 			if(res.data.hasOwnProperty('error')){
 				if(res.data.error.code == 403) {

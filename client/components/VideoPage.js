@@ -34,10 +34,10 @@ class VideoPage extends React.Component {
 	componentDidMount() {
 		let newStates = {};
 		if(authed){
-	      axios.get(`http://localhost:8080/getvideo/${this.props.match.params.videoId}`)
+	      axios.get(`${window.location.protocol}//${window.location.hostname}/getvideo/${this.props.match.params.videoId}`)
 	      .then(res => {
 	        newStates.video = res.data;
-	        return axios.get(`http://localhost:8080/getchannel/${res.data.snippet.channelId}`);
+	        return axios.get(`${window.location.protocol}//${window.location.hostname}/getchannel/${res.data.snippet.channelId}`);
 	      }).then(res => {
 	      	newStates.channel = res.data;
 	      	this.setState(newStates);

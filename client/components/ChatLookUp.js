@@ -66,7 +66,7 @@ class ChatLookUp extends React.Component {
 		if(typeof userName === 'string') search = userName;
 		else search = document.getElementById("userName").value;
 		if(authed && search.length > 0){
-			axios.get(`http://localhost:8080/getuserchats/${this.props.chatId}/${encodeURIComponent(search)}`)
+			axios.get(`${window.location.protocol}//${window.location.hostname}/getuserchats/${this.props.chatId}/${encodeURIComponent(search)}`)
 			.then(function(res){
 				if(res.data.found){
 					parent.setState({
