@@ -98,10 +98,8 @@ class Chat extends React.Component {
 					this.setState({ error:true });
 			    }
 			} else {
-				console.log(res.data);
 				let newChats = this.state.chats.concat(res.data.items);
 				let CPS = (res.data.pageInfo.totalResults / (this.state.requestInterval/1000)).toFixed(2);
-				console.log(CPS,"chats per second");
 				this.setState({
 		    		nextPageToken:res.data.nextPageToken,
 					requestInterval:res.data.pollingIntervalMillis,
