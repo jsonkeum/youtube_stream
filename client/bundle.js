@@ -35445,9 +35445,9 @@ class VideoPage extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component 
 	componentDidMount() {
 		let newStates = {};
 		if (authed) {
-			__WEBPACK_IMPORTED_MODULE_2_axios___default.a.get(`http://localhost:8080/getvideo/${this.props.match.params.videoId}`).then(res => {
+			__WEBPACK_IMPORTED_MODULE_2_axios___default.a.get(`${window.location.protocol}//${window.location.hostname}/getvideo/${this.props.match.params.videoId}`).then(res => {
 				newStates.video = res.data;
-				return __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get(`http://localhost:8080/getchannel/${res.data.snippet.channelId}`);
+				return __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get(`${window.location.protocol}//${window.location.hostname}/getchannel/${res.data.snippet.channelId}`);
 			}).then(res => {
 				newStates.channel = res.data;
 				this.setState(newStates);
@@ -38641,7 +38641,7 @@ class Chat extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
  */
 	getChats() {
 		if (authed) {
-			__WEBPACK_IMPORTED_MODULE_1_axios___default.a.get(`http://localhost:8080/getchats/${this.props.chatID}`).then(res => {
+			__WEBPACK_IMPORTED_MODULE_1_axios___default.a.get(`${window.location.protocol}//${window.location.hostname}/getchats/${this.props.chatID}`).then(res => {
 				if (res.data.hasOwnProperty('error')) {
 					if (res.data.error.code == 403) {
 						clearTimeout(timer);
@@ -38668,7 +38668,7 @@ class Chat extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
  	Grabs the polling interval time and page token from response.
  */
 	nextChats() {
-		__WEBPACK_IMPORTED_MODULE_1_axios___default.a.get(`http://localhost:8080/nextchats/${this.props.chatID}/${this.state.nextPageToken}`).then(res => {
+		__WEBPACK_IMPORTED_MODULE_1_axios___default.a.get(`${window.location.protocol}//${window.location.hostname}/nextchats/${this.props.chatID}/${this.state.nextPageToken}`).then(res => {
 			if (res.data.hasOwnProperty('error')) {
 				if (res.data.error.code == 403) {
 					clearTimeout(timer);
@@ -38871,7 +38871,7 @@ class ChatLookUp extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component
 		let search;
 		if (typeof userName === 'string') search = userName;else search = document.getElementById("userName").value;
 		if (authed && search.length > 0) {
-			__WEBPACK_IMPORTED_MODULE_1_axios___default.a.get(`http://localhost:8080/getuserchats/${this.props.chatId}/${encodeURIComponent(search)}`).then(function (res) {
+			__WEBPACK_IMPORTED_MODULE_1_axios___default.a.get(`${window.location.protocol}//${window.location.hostname}/getuserchats/${this.props.chatId}/${encodeURIComponent(search)}`).then(function (res) {
 				if (res.data.found) {
 					parent.setState({
 						showModal: true,
