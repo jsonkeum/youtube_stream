@@ -1,0 +1,62 @@
+/* /client/styles/Login.css */
+.signin {
+  cursor:pointer;
+  margin:auto;
+  height:50px;
+  width:210px;
+  border-radius:3px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-image:url('/assets/images/btn_google_signin_light_normal_web@2x.png');
+}
+.signin:hover {
+  background-image:url('/assets/images/btn_google_signin_light_focus_web@2x.png');
+}
+.signin:active {
+  background-image:url('/assets/images/btn_google_signin_dark_focus_web@2x.png');
+}
+.login-title {
+  font-family:"Bungee Inline", cursive;
+  text-align:right;
+}
+.login-button {
+  float:right;
+  margin-top:35px;
+}
+.login-banner {
+    max-width: 1000px;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 5vw;
+}
+.product-image {
+  background-image:url("/assets/images/mockup.png");
+  height: 400px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.no-padding {
+  padding:0;
+}
+.page-bottom {
+  position:absolute;
+  bottom:20px;
+  left:0;
+  right:0;
+}
+@media screen and (max-width:767px){
+  .login-title {
+    text-align:center;
+  }
+  .login-button {
+    float:inherit;
+  }
+  .product-image {
+    height: 50vh;
+  }
+}

@@ -1,0 +1,36 @@
+/* /client/styles/App.css */
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+@import url('https://fonts.googleapis.com/css?family=Questrial');
+body {
+  font-family: 'Questrial', sans-serif;
+  color:white;
+  background-color:#111623;
+  overflow-x: hidden;
+}
+.site-width-wrapper {
+  margin:auto;
+}
+.site-button {
+    color: white!important;
+    background-color: #111623!important;
+    letter-spacing: 2px;
+    border: 2px solid white;
+    transition-duration:0.3s;
+    border-radius:4px;
+    padding:0;
+}
+.site-button:hover {
+	  letter-spacing: 4px;
+    font-weight:1000;
+    border: 3px solid #d1ffdf;
+    color:#d1ffdf!important;
+}
+.site-link {
+  color:white;
+  text-decoration: none!important;
+  transition-duration: 0.1s;
+}
+.site-link:hover {
+  color:#d1ffdf;
+  text-decoration: none!important;
+}

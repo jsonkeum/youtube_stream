@@ -1,0 +1,98 @@
+/* /client/styles/Chat.css */
+.hype {
+	width: 24px;
+    height: auto;
+    fill: white;
+    margin-bottom: -5px;
+}
+#chat-messages {
+	overflow-y: scroll;
+    overflow-x: hidden;
+    height: 90%;
+    padding-bottom: 25px;
+    background-color: #2b2b2b;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+/* width */
+#chat-messages::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+#chat-messages::-webkit-scrollbar-track {
+    background: #6f6f6f; 
+}
+ 
+/* Handle */
+#chat-messages::-webkit-scrollbar-thumb {
+    background: #009c30; 
+}
+
+/* Handle on hover */
+#chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #00ff4e; 
+}
+
+#chat-pane {
+	position: fixed;
+    top: 100px;
+    bottom: 10px;
+    right: 0;
+    width: calc(100%*1/3);
+    border-radius: 4px;
+    padding: 6px;
+}
+
+.message {
+	margin:5px 0px;
+	letter-spacing: 0.5px;
+}
+.chat-pic {
+	display: inline;
+    width: calc(100%*(1/12));
+    max-width: 30px;
+    max-height: 30px;
+    margin-right: 4px;
+    border-radius: 50%;
+}
+.chat-msg {
+	display:inline;
+	width:calc(100%*(11/12));
+}
+.search-user-click {
+	cursor:pointer;
+}
+.hype-number {
+	font-weight:1000;
+	font-size:20px;
+	color:palegreen;
+
+}
+@media screen and (max-width:992px) {
+	#chat-pane {
+		padding: 0;
+		position:relative;
+		width:100%;
+		top:0;
+	}
+	#chat-messages {
+		height:50vh;
+	}
+}
+@media screen and (max-width:768px) {
+	#chat-messages {
+		height:31vh;
+	}
+}
+@media screen and (max-width:450px){
+	.chat-msg {
+		font-size: 85%;
+	}
+	.hype {
+		width:20px;
+	}
+	.hype-number {
+		font-size:16px;
+	}
+}

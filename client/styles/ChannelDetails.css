@@ -1,0 +1,42 @@
+/* /client/styles/ChannelDetails.css */
+.channel-icon img {
+	border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    box-shadow: -3px 3px 2px rgba(0,0,0,0.25);
+    height:60px;
+}
+.channel-title {
+	font-family:"Bungee Inline", sans-serif
+}
+.channel-subs {
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+}
+.channel-subs h5 {
+	font-weight: 1000;
+    text-align: right;
+    margin: 0;
+}
+#channel-details {
+	height: 75px;
+    color: palegreen;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: #111623;
+    border: 2px solid palegreen;
+}
+@media screen and (max-width:420px){
+	.channel-icon img {
+		height:40px;
+	}
+	#channel-details {
+		height: 54px;
+	}
+	.channel-title h3 {
+		margin-top:5px;
+	}
+}

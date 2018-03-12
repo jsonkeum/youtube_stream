@@ -1,0 +1,96 @@
+/* /client/styles/ChatLookUp.css */
+.searchModal {
+	color:white;
+}
+.searchModal .modal-dialog {
+	float:right;
+	margin-right:15px;
+	margin-top: 100px;
+	width:none;
+}
+.searchModal .modal-content {
+	background-color:#33425d;
+}
+
+.search-button {
+	width: 260px;
+    height: 35px;
+    padding-top: 5px;
+    float:right;
+}
+
+.modal-backdrop {
+	background-color:rgba(0,0,0,0)!important;
+}
+.search-messages {
+	max-height: 50vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+/* width */
+.search-messages::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+.search-messages::-webkit-scrollbar-track {
+    background: #6f6f6f; 
+}
+ 
+/* Handle */
+.search-messages::-webkit-scrollbar-thumb {
+    background: #009c30; 
+}
+
+/* Handle on hover */
+.search-messages::-webkit-scrollbar-thumb:hover {
+    background: #00ff4e; 
+}
+
+.user-name-input {
+	display: inline-block;
+    width: calc(100%*3/4);
+}
+
+#userName {
+	width: calc(100%*(9/12));
+	display:inline-block;
+	background-color:#00000080;
+	color:white;
+	letter-spacing: 1px;
+}
+.username-search button {
+	display:inline-block;
+	width:calc(100%*(1/4));
+	height:35px;
+}
+.user-details {
+	height: 40px;
+    background: palegreen;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: #111623;
+}
+.user-details-icon img {
+	position: absolute;
+    top: 0px;
+    left: 7px;
+    box-shadow: -3px 3px 2px rgba(0,0,0,0.25);
+    height: 40px;
+    border-radius: 50%;
+}
+.user-details-box {
+	font-family:"Bungee Inline";
+}
+.close {
+	color:white;
+}
+	
+@media (max-width: 768px){
+	.searchModal .modal-dialog {
+		width:94%;
+	}
+	.searchModal .modal-dialog h4 {
+		font-size:14px;
+	}
+}

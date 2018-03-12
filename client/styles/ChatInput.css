@@ -1,0 +1,13 @@
+/* /client/styles/ChatInput.css */
+#send-chat {
+	color: white;
+    width: 100%;
+    border-radius: 4px;
+    height: 35px;
+    background-color: rgba(255,255,255,0.1);
+    letter-spacing: 1px;
+}
+#send-chat-btn {
+    height: 35px;
+	width: 100%;
+}
