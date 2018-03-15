@@ -32992,30 +32992,68 @@ var withRouter = function withRouter(Component) {
 
 
 //Define client side route paths using react router. authed is a server side variable
-const App = () => {
-  if (!authed) {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Switch */],
-      null,
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Route */], { path: '/', component: __WEBPACK_IMPORTED_MODULE_3__Login__["a" /* default */] })
-    );
-  } else {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'div',
-      null,
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Header__["a" /* default */], null),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+  componentDidUpdate() {
+    const ele = document.getElementById('ipl-progress-indicator');
+    if (ele) {
+      setTimeout(() => {
+        ele.classList.add('available');
+        setTimeout(() => {
+          ele.outerHTML = '';
+        }, 2000);
+      }, 1000);
+    }
+  }
+  render() {
+    if (!authed) {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Switch */],
         null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Route */], { path: '/video/:videoId', component: __WEBPACK_IMPORTED_MODULE_5__VideoPage__["a" /* default */] }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Route */], { path: '/lobby', component: __WEBPACK_IMPORTED_MODULE_2__Lobby__["a" /* default */] }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Route */], { path: '/', component: __WEBPACK_IMPORTED_MODULE_2__Lobby__["a" /* default */] })
-      )
-    );
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Route */], { path: '/', component: __WEBPACK_IMPORTED_MODULE_3__Login__["a" /* default */] })
+      );
+    } else {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        null,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Header__["a" /* default */], null),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'ipl-progress-indicator', id: 'ipl-progress-indicator' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'ipl-progress-indicator-head' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'first-indicator' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'second-indicator' })
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'insp-logo-frame' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'svg',
+              { width: '112', className: 'insp-logo-frame-img', height: '112', viewBox: '0 0 841.9 595.3' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'g',
+                { fill: '#ffffff' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', { d: 'M666.3 296.5c0-32.5-40.7-63.3-103.1-82.4 14.4-63.6 8-114.2-20.2-130.4-6.5-3.8-14.1-5.6-22.4-5.6v22.3c4.6 0 8.3.9 11.4 2.6 13.6 7.8 19.5 37.5 14.9 75.7-1.1 9.4-2.9 19.3-5.1 29.4-19.6-4.8-41-8.5-63.5-10.9-13.5-18.5-27.5-35.3-41.6-50 32.6-30.3 63.2-46.9 84-46.9V78c-27.5 0-63.5 19.6-99.9 53.6-36.4-33.8-72.4-53.2-99.9-53.2v22.3c20.7 0 51.4 16.5 84 46.6-14 14.7-28 31.4-41.3 49.9-22.6 2.4-44 6.1-63.6 11-2.3-10-4-19.7-5.2-29-4.7-38.2 1.1-67.9 14.6-75.8 3-1.8 6.9-2.6 11.5-2.6V78.5c-8.4 0-16 1.8-22.6 5.6-28.1 16.2-34.4 66.7-19.9 130.1-62.2 19.2-102.7 49.9-102.7 82.3 0 32.5 40.7 63.3 103.1 82.4-14.4 63.6-8 114.2 20.2 130.4 6.5 3.8 14.1 5.6 22.5 5.6 27.5 0 63.5-19.6 99.9-53.6 36.4 33.8 72.4 53.2 99.9 53.2 8.4 0 16-1.8 22.6-5.6 28.1-16.2 34.4-66.7 19.9-130.1 62-19.1 102.5-49.9 102.5-82.3zm-130.2-66.7c-3.7 12.9-8.3 26.2-13.5 39.5-4.1-8-8.4-16-13.1-24-4.6-8-9.5-15.8-14.4-23.4 14.2 2.1 27.9 4.7 41 7.9zm-45.8 106.5c-7.8 13.5-15.8 26.3-24.1 38.2-14.9 1.3-30 2-45.2 2-15.1 0-30.2-.7-45-1.9-8.3-11.9-16.4-24.6-24.2-38-7.6-13.1-14.5-26.4-20.8-39.8 6.2-13.4 13.2-26.8 20.7-39.9 7.8-13.5 15.8-26.3 24.1-38.2 14.9-1.3 30-2 45.2-2 15.1 0 30.2.7 45 1.9 8.3 11.9 16.4 24.6 24.2 38 7.6 13.1 14.5 26.4 20.8 39.8-6.3 13.4-13.2 26.8-20.7 39.9zm32.3-13c5.4 13.4 10 26.8 13.8 39.8-13.1 3.2-26.9 5.9-41.2 8 4.9-7.7 9.8-15.6 14.4-23.7 4.6-8 8.9-16.1 13-24.1zM421.2 430c-9.3-9.6-18.6-20.3-27.8-32 9 .4 18.2.7 27.5.7 9.4 0 18.7-.2 27.8-.7-9 11.7-18.3 22.4-27.5 32zm-74.4-58.9c-14.2-2.1-27.9-4.7-41-7.9 3.7-12.9 8.3-26.2 13.5-39.5 4.1 8 8.4 16 13.1 24 4.7 8 9.5 15.8 14.4 23.4zM420.7 163c9.3 9.6 18.6 20.3 27.8 32-9-.4-18.2-.7-27.5-.7-9.4 0-18.7.2-27.8.7 9-11.7 18.3-22.4 27.5-32zm-74 58.9c-4.9 7.7-9.8 15.6-14.4 23.7-4.6 8-8.9 16-13 24-5.4-13.4-10-26.8-13.8-39.8 13.1-3.1 26.9-5.8 41.2-7.9zm-90.5 125.2c-35.4-15.1-58.3-34.9-58.3-50.6 0-15.7 22.9-35.6 58.3-50.6 8.6-3.7 18-7 27.7-10.1 5.7 19.6 13.2 40 22.5 60.9-9.2 20.8-16.6 41.1-22.2 60.6-9.9-3.1-19.3-6.5-28-10.2zM310 490c-13.6-7.8-19.5-37.5-14.9-75.7 1.1-9.4 2.9-19.3 5.1-29.4 19.6 4.8 41 8.5 63.5 10.9 13.5 18.5 27.5 35.3 41.6 50-32.6 30.3-63.2 46.9-84 46.9-4.5-.1-8.3-1-11.3-2.7zm237.2-76.2c4.7 38.2-1.1 67.9-14.6 75.8-3 1.8-6.9 2.6-11.5 2.6-20.7 0-51.4-16.5-84-46.6 14-14.7 28-31.4 41.3-49.9 22.6-2.4 44-6.1 63.6-11 2.3 10.1 4.1 19.8 5.2 29.1zm38.5-66.7c-8.6 3.7-18 7-27.7 10.1-5.7-19.6-13.2-40-22.5-60.9 9.2-20.8 16.6-41.1 22.2-60.6 9.9 3.1 19.3 6.5 28.1 10.2 35.4 15.1 58.3 34.9 58.3 50.6-.1 15.7-23 35.6-58.4 50.6zM320.8 78.4z' }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('circle', { cx: '420.9', cy: '296.5', r: '45.7' }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', { d: 'M520.5 78.1z' })
+              )
+            )
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Switch */],
+          null,
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Route */], { path: '/video/:videoId', component: __WEBPACK_IMPORTED_MODULE_5__VideoPage__["a" /* default */] }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Route */], { path: '/lobby', component: __WEBPACK_IMPORTED_MODULE_2__Lobby__["a" /* default */] }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Route */], { path: '/', component: __WEBPACK_IMPORTED_MODULE_2__Lobby__["a" /* default */] })
+        )
+      );
+    }
   }
-};
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = App;
 
-/* harmony default export */ __webpack_exports__["a"] = (App);
 
 /***/ }),
 /* 184 */
@@ -33050,6 +33088,17 @@ class Lobby extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
       __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get(`/fetchvideos`).then(res => {
         this.setState({ videos: res.data });
       });
+    }
+  }
+  componentDidUpdate() {
+    const ele = document.getElementById('ipl-progress-indicator');
+    if (ele) {
+      setTimeout(() => {
+        ele.classList.add('available');
+        setTimeout(() => {
+          ele.outerHTML = '';
+        }, 2000);
+      }, 1000);
     }
   }
   render() {
@@ -35056,7 +35105,7 @@ exports = module.exports = __webpack_require__(14)(undefined);
 
 
 // module
-exports.push([module.i, "/* /client/styles/Lobby.css */\r\n\r\n.cards-wrapper {\r\n\tpadding:25px;\r\n\tmargin-top:100px;\r\n}\r\n.credits {\r\n\tfont-size:80%;\r\n}", ""]);
+exports.push([module.i, "/* /client/styles/Lobby.css */\r\n\r\n.cards-wrapper {\r\n\tpadding:65px 25px 0px 25px;\r\n\tmargin-top:65px;\r\n}\r\n@media screen and (max-width:768px){\r\n\t.cards-wrapper {\r\n\t\tpadding:20px;\r\n\t}\r\n}\r\n.credits {\r\n\tfont-size:80%;\r\n}", ""]);
 
 // exports
 
@@ -35289,7 +35338,7 @@ exports = module.exports = __webpack_require__(14)(undefined);
 
 
 // module
-exports.push([module.i, "/* /client/styles/Header.css */\r\n#header {\r\n    background-color: #111623;\r\n    text-align: center;\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    z-index: 2;\r\n    box-shadow:0px 0px 20px 0px #ffffff70;\r\n}\r\n.header-title {\r\n  font-family:\"Bungee Inline\", cursive;\r\n  color:white;\r\n  transition-duration:1s;\r\n}\r\n.header-title:hover {\r\n    color:#d1ffdf;\r\n    text-decoration:none;\r\n}\r\n.header-title h2 {\r\n    position:absolute;\r\n    left:0;\r\n    right:0;\r\n}\r\n.logout {\r\n    margin: 10px auto;\r\n    width: 180px;\r\n    height: 45px;\r\n    float:right;\r\n    padding: 11px 0 0 0!important;\r\n    text-decoration: none!important;\r\n}\r\n@media screen and (max-width:992px) {\r\n    .header-title h2 {\r\n        font-size: 24px;\r\n    }\r\n}\r\n@media screen and (max-width:768px) {\r\n    .header-title h2 {\r\n        font-size: 18px;\r\n        margin-top: 8px;\r\n    }\r\n    .logout {\r\n         width: 90px;\r\n         height:35px;\r\n         padding-top: 5px!important;\r\n    }\r\n}", ""]);
+exports.push([module.i, "/* /client/styles/Header.css */\r\n#header {\r\n    background-color: #111623;\r\n    text-align: center;\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    z-index: 10000;\r\n    box-shadow:0px 0px 20px 0px #ffffff70;\r\n}\r\n.header-title {\r\n  font-family:\"Bungee Inline\", cursive;\r\n  color:white;\r\n  transition-duration:1s;\r\n}\r\n.header-title:hover {\r\n    color:#d1ffdf;\r\n    text-decoration:none;\r\n}\r\n.header-title h2 {\r\n    position:absolute;\r\n    left:0;\r\n    right:0;\r\n}\r\n.logout {\r\n    margin: 10px auto;\r\n    width: 180px;\r\n    height: 45px;\r\n    float:right;\r\n    padding: 11px 0 0 0!important;\r\n    text-decoration: none!important;\r\n}\r\n@media screen and (max-width:992px) {\r\n    .header-title h2 {\r\n        font-size: 24px;\r\n    }\r\n}\r\n@media screen and (max-width:768px) {\r\n    .header-title h2 {\r\n        font-size: 18px;\r\n        margin-top: 8px;\r\n    }\r\n    .logout {\r\n         width: 90px;\r\n         height:35px;\r\n         padding-top: 5px!important;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -35452,6 +35501,17 @@ class VideoPage extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component 
 				newStates.channel = res.data;
 				this.setState(newStates);
 			});
+		}
+	}
+	componentDidUpdate() {
+		const ele = document.getElementById('ipl-progress-indicator');
+		if (ele) {
+			setTimeout(() => {
+				ele.classList.add('available');
+				setTimeout(() => {
+					ele.outerHTML = '';
+				}, 2000);
+			}, 1000);
 		}
 	}
 	render() {
@@ -43961,7 +44021,7 @@ exports = module.exports = __webpack_require__(14)(undefined);
 
 
 // module
-exports.push([module.i, "/* /client/styles/Chat.css */\r\n.hype {\r\n\twidth: 24px;\r\n    height: auto;\r\n    fill: white;\r\n    margin-bottom: -5px;\r\n}\r\n#chat-messages {\r\n\toverflow-y: scroll;\r\n    overflow-x: hidden;\r\n    height: 85%;\r\n    padding-bottom: 25px;\r\n    background-color: #2b2b2b;\r\n    padding-left: 5px;\r\n    padding-right: 5px;\r\n}\r\n/* width */\r\n#chat-messages::-webkit-scrollbar {\r\n    width: 12px;\r\n}\r\n\r\n/* Track */\r\n#chat-messages::-webkit-scrollbar-track {\r\n    background: #6f6f6f; \r\n}\r\n \r\n/* Handle */\r\n#chat-messages::-webkit-scrollbar-thumb {\r\n    background: #009c30; \r\n}\r\n\r\n/* Handle on hover */\r\n#chat-messages::-webkit-scrollbar-thumb:hover {\r\n    background: #00ff4e; \r\n}\r\n\r\n#chat-pane {\r\n\tposition: fixed;\r\n    top: 100px;\r\n    bottom: 10px;\r\n    right: 0;\r\n    width: calc(100%*1/3);\r\n    border-radius: 4px;\r\n    padding: 6px;\r\n}\r\n\r\n.message {\r\n\tmargin:5px 0px;\r\n\tletter-spacing: 0.5px;\r\n}\r\n.chat-pic {\r\n\tdisplay: inline;\r\n    width: calc(100%*(1/12));\r\n    max-width: 30px;\r\n    max-height: 30px;\r\n    margin-right: 4px;\r\n    border-radius: 50%;\r\n}\r\n.chat-msg {\r\n\tdisplay:inline;\r\n\twidth:calc(100%*(11/12));\r\n}\r\n.search-user-click {\r\n\tcursor:pointer;\r\n}\r\n.hype-number {\r\n\tfont-weight:1000;\r\n\tfont-size:20px;\r\n\tcolor:palegreen;\r\n\r\n}\r\n@media screen and (max-width:992px) {\r\n\t#chat-pane {\r\n\t\tpadding: 0;\r\n\t\tposition:relative;\r\n\t\twidth:100%;\r\n\t\ttop:0;\r\n\t}\r\n\t#chat-messages {\r\n\t\theight:50vh;\r\n\t}\r\n}\r\n@media screen and (max-width:768px) {\r\n\t#chat-messages {\r\n\t\theight:31vh;\r\n\t}\r\n}\r\n@media screen and (max-width:450px){\r\n\t.chat-msg {\r\n\t\tfont-size: 85%;\r\n\t}\r\n\t.hype {\r\n\t\twidth:20px;\r\n\t}\r\n\t.hype-number {\r\n\t\tfont-size:16px;\r\n\t}\r\n}\r\n", ""]);
+exports.push([module.i, "/* /client/styles/Chat.css */\r\n.hype {\r\n\twidth: 24px;\r\n    height: auto;\r\n    fill: white;\r\n    margin-bottom: -5px;\r\n}\r\n#chat-messages {\r\n\toverflow-y: scroll;\r\n    overflow-x: hidden;\r\n    height: 83%;\r\n    padding-bottom: 25px;\r\n    background-color: #2b2b2b;\r\n    padding-left: 5px;\r\n    padding-right: 5px;\r\n}\r\n/* width */\r\n#chat-messages::-webkit-scrollbar {\r\n    width: 12px;\r\n}\r\n\r\n/* Track */\r\n#chat-messages::-webkit-scrollbar-track {\r\n    background: #6f6f6f; \r\n}\r\n \r\n/* Handle */\r\n#chat-messages::-webkit-scrollbar-thumb {\r\n    background: #009c30; \r\n}\r\n\r\n/* Handle on hover */\r\n#chat-messages::-webkit-scrollbar-thumb:hover {\r\n    background: #00ff4e; \r\n}\r\n\r\n#chat-pane {\r\n\tposition: fixed;\r\n    top: 100px;\r\n    bottom: 10px;\r\n    right: 0;\r\n    width: calc(100%*1/3);\r\n    border-radius: 4px;\r\n    padding: 6px;\r\n}\r\n\r\n.message {\r\n\tmargin:5px 0px;\r\n\tletter-spacing: 0.5px;\r\n}\r\n.chat-pic {\r\n\tdisplay: inline;\r\n    width: calc(100%*(1/12));\r\n    max-width: 30px;\r\n    max-height: 30px;\r\n    margin-right: 4px;\r\n    border-radius: 50%;\r\n}\r\n.chat-msg {\r\n\tdisplay:inline;\r\n\twidth:calc(100%*(11/12));\r\n}\r\n.search-user-click {\r\n\tcursor:pointer;\r\n}\r\n.hype-number {\r\n\tfont-weight:1000;\r\n\tfont-size:20px;\r\n\tcolor:palegreen;\r\n\r\n}\r\n@media screen and (max-width:992px) {\r\n\t#chat-pane {\r\n\t\tpadding: 0;\r\n\t\tposition:relative;\r\n\t\twidth:100%;\r\n\t\ttop:0;\r\n\t}\r\n\t#chat-messages {\r\n\t\theight:50vh;\r\n\t}\r\n}\r\n@media screen and (max-width:768px) {\r\n\t#chat-messages {\r\n\t\theight:31vh;\r\n\t}\r\n}\r\n@media screen and (max-width:450px){\r\n\t.chat-msg {\r\n\t\tfont-size: 85%;\r\n\t}\r\n\t.hype {\r\n\t\twidth:20px;\r\n\t}\r\n\t.hype-number {\r\n\t\tfont-size:16px;\r\n\t}\r\n}\r\n", ""]);
 
 // exports
 
@@ -44052,7 +44112,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Bun
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Questrial);", ""]);
 
 // module
-exports.push([module.i, "/* /client/styles/App.css */\nbody {\n  font-family: 'Questrial', sans-serif;\n  color:white;\n  background-color:#111623;\n  overflow-x: hidden;\n}\n.site-width-wrapper {\n  margin:auto;\n}\n.site-button {\n    color: white!important;\n    background-color: #111623!important;\n    letter-spacing: 2px;\n    border: 2px solid white;\n    transition-duration:0.3s;\n    border-radius:4px;\n    padding:0;\n}\n.site-button:hover {\n\t  letter-spacing: 4px;\n    font-weight:1000;\n    border: 3px solid #d1ffdf;\n    color:#d1ffdf!important;\n}\n.site-link {\n  color:white;\n  text-decoration: none!important;\n  transition-duration: 0.1s;\n}\n.site-link:hover {\n  color:#d1ffdf;\n  text-decoration: none!important;\n}\n", ""]);
+exports.push([module.i, "/* /client/styles/App.css */\nbody {\n  font-family: 'Questrial', sans-serif;\n  color:white;\n  background-color:#111623;\n  overflow-x: hidden;\n}\n.site-width-wrapper {\n  margin:auto;\n}\n.site-button {\n    color: white!important;\n    background-color: #111623!important;\n    letter-spacing: 2px;\n    border: 2px solid white;\n    transition-duration:0.3s;\n    border-radius:4px;\n    padding:0;\n}\n.site-button:hover {\n\t  letter-spacing: 4px;\n    font-weight:1000;\n    border: 3px solid #d1ffdf;\n    color:#d1ffdf!important;\n}\n.site-link {\n  color:white;\n  text-decoration: none!important;\n  transition-duration: 0.1s;\n}\n.site-link:hover {\n  color:#d1ffdf;\n  text-decoration: none!important;\n}\n.ipl-progress-indicator.available {\n      opacity: 0;\n      }\n.ipl-progress-indicator {\n      background-color: #111623;\n      width: 100%;\n      height: 100%;\n      position: fixed;\n      opacity: 1;\n      pointer-events: none;\n      -webkit-transition: opacity cubic-bezier(.4, 0, .2, 1) 436ms;\n      -moz-transition: opacity cubic-bezier(.4, 0, .2, 1) 436ms;\n      transition: opacity cubic-bezier(.4, 0, .2, 1) 436ms;\n      z-index: 9999;\n      }\n.insp-logo-frame {\n      display: -webkit-flex;\n      display: -moz-flex;\n      display: flex;\n      -webkit-flex-direction: column;\n      -moz-flex-direction: column;\n      flex-direction: column;\n      -webkit-justify-content: center;\n      -moz-justify-content: center;\n      justify-content: center;\n      -webkit-animation: fadein 436ms;\n      -moz-animation: fadein 436ms;\n      animation: fadein 436ms;\n      height: 98%;\n      }\n.insp-logo-frame-img{\n      width: 112px;\n      height: 112px;\n      -webkit-align-self: center;\n      -moz-align-self: center;\n      align-self: center;\n      border-radius: 50%;\n      }\n.ipl-progress-indicator-head {\n      background-color: #c6dafc;\n      height: 4px;\n      overflow: hidden;\n      position: relative;\n      }\n.ipl-progress-indicator .first-indicator, .ipl-progress-indicator .second-indicator {\n      background-color: #056D8B;\n      bottom: 0;\n      left: 0;\n      right: 0;\n      top: 0;\n      position: absolute;\n      -webkit-transform-origin: left center;\n      -moz-transform-origin: left center;\n      transform-origin: left center;\n      -webkit-transform: scaleX(0);\n      -moz-transform: scaleX(0);\n      transform: scaleX(0);\n      }\n.ipl-progress-indicator .first-indicator {\n      -webkit-animation: first-indicator 2000ms linear infinite;\n      -moz-animation: first-indicator 2000ms linear infinite;\n      animation: first-indicator 2000ms linear infinite;\n      }\n.ipl-progress-indicator .second-indicator {\n      -webkit-animation: second-indicator 2000ms linear infinite;\n      -moz-animation: second-indicator 2000ms linear infinite;\n      animation: second-indicator 2000ms linear infinite;\n      }\n.ipl-progress-indicator .insp-logo {\n      animation: App-logo-spin infinite 20s linear;\n      border-radius: 50%;\n      -webkit-align-self: center;\n      -moz-align-self: center;\n      align-self: center;\n      }\n@keyframes App-logo-spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n@-webkit-keyframes fadein {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  };\n}\n@-moz-keyframes fadein {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  };\n}\n@keyframes fadein {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  };\n}\n@keyframes first-indicator {\n  0% {\n    transform: translate(0%) scaleX(0);\n  }\n  25% {\n    transform: translate(0%) scaleX(0.5);\n  }\n  50% {\n    transform: translate(25%) scaleX(0.75);\n  }\n  75% {\n    transform: translate(100%) scaleX(0);\n  }\n  100% {\n    transform: translate(100%) scaleX(0);\n  };\n}\n@keyframes second-indicator {\n  0% {\n    transform: translate(0%) scaleX(0);\n  }\n  60% {\n    transform: translate(0%) scaleX(0);\n  }\n  80% {\n    transform: translate(0%) scaleX(0.6);\n  }\n  100% {\n    transform: translate(100%) scaleX(0.1);\n  };\n}", ""]);
 
 // exports
 
