@@ -21,7 +21,7 @@
   "scripts": {
     "web": "node bin/www",
     "webpack": "webpack",
-    "start": "npm run webpack && node -- bin/www",
+    "start": "webpack && node -- bin/www",
     "watch": "node_modules/webpack/bin/webpack.js --mode=development --watch --progress --hide-modules --config=./webpack.config.js",
     "watch-server": "node_modules/.bin/webpack-dev-server --mode=development --watch --progress --hide-modules --config=./webpack.config.js"
   },
