@@ -3,20 +3,20 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "atob": ">=2.1.0",
     "axios": "^0.18.0",
     "body-parser": "^1.18.2",
+    "deep-extend": ">=0.5.1",
     "dotenv": "^5.0.1",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
+    "lodash": "^4.17.15",
     "mongoose": ">=5.7.5",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.2.0",
     "react-html-parser": "^2.0.2",
-    "react-router-dom": "^4.2.2",
-    "deep-extend": ">=0.5.1",
-    "lodash": ">=4.17.13",
-    "atob": ">=2.1.0"
+    "react-router-dom": "^4.2.2"
   },
   "scripts": {
     "web": "node bin/www",
