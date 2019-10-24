@@ -8,13 +8,15 @@ module.exports = {
   filename: 'bundle.js'
  },
  module: {
-  loaders: [{
-   test: /.jsx?$/,
-   loader: 'babel-loader',
-   exclude: /node_modules/,
-   query: {
-    presets: ['react', 'es2016']
-   }
+  rules: [{
+    test: /\.m?js$/,
+    exclude: /(node_modules|bower_components)/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env', '@babel/preset-react']
+      }
+    }
   },
   {
    test: /\.css$/,

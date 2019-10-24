@@ -5,6 +5,7 @@ import Lobby from './Lobby';
 import Login from './Login';
 import Header from './Header';
 import VideoPage from './VideoPage';
+
 import '../styles/App.css';
 
 //Define client side route paths using react router. authed is a server side variable

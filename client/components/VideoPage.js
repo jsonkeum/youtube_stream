@@ -4,9 +4,10 @@ import ReactHtmlParser from 'react-html-parser';
 import axios from 'axios';
 import ChannelDetails from './ChannelDetails';
 import Chat from './Chat';
+import { Col, Row } from 'react-bootstrap';
+
 import '../styles/VideoPage.css';
-const Col = require('react-bootstrap/lib/Col');
-const Row = require('react-bootstrap/lib/Row');
+
 
 //Responsible for rendering video page, grabbing JSON data from server to 
 //display video and channel info as well as interacting with the Chat component
@@ -34,10 +35,10 @@ class VideoPage extends React.Component {
 	componentDidMount() {
 		let newStates = {};
 		if(authed){
-	      axios.get(`${window.location.protocol}//${window.location.hostname}/getvideo/${this.props.match.params.videoId}`)
+	      axios.get(`${window.location.protocol}//${window.location.host}/getvideo/${this.props.match.params.videoId}`)
 	      .then(res => {
 	        newStates.video = res.data;
-	        return axios.get(`${window.location.protocol}//${window.location.hostname}/getchannel/${res.data.snippet.channelId}`);
+	        return axios.get(`${window.location.protocol}//${window.location.host}/getchannel/${res.data.snippet.channelId}`);
 	      }).then(res => {
 	      	newStates.channel = res.data;
 	      	this.setState(newStates);

@@ -3,9 +3,9 @@ import React from 'react';
 import axios from 'axios';
 import ChatLookUp from './ChatLookUp';
 import ChatInput from './ChatInput';
+
 import '../styles/Chat.css';
-const Col = require('react-bootstrap/lib/Col');
-const Row = require('react-bootstrap/lib/Row');
+
 var timer;
 
 //This component is responsible for grabbing initial and continuous chat data
@@ -57,7 +57,7 @@ class Chat extends React.Component {
 	*/
 	getChats(){
 		if(authed){
-			axios.get(`${window.location.protocol}//${window.location.hostname}/getchats/${this.props.chatID}`)
+			axios.get(`${window.location.protocol}//${window.location.host}/getchats/${this.props.chatID}`)
 			.then(res => {
 				if(res.data.hasOwnProperty('error')){
 					if(res.data.error.code == 403) {
@@ -85,7 +85,7 @@ class Chat extends React.Component {
 		Grabs the polling interval time and page token from response.
 	*/
 	nextChats(){
-		axios.get(`${window.location.protocol}//${window.location.hostname}/nextchats/${this.props.chatID}/${this.state.nextPageToken}`)
+		axios.get(`${window.location.protocol}//${window.location.host}/nextchats/${this.props.chatID}/${this.state.nextPageToken}`)
 		.then(res => {
 			if(res.data.hasOwnProperty('error')){
 				if(res.data.error.code == 403) {

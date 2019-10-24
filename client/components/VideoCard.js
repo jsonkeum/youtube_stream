@@ -1,7 +1,9 @@
 //client/components/VideoCard.js
 import React from 'react';
+import { Col } from 'react-bootstrap';
+
 import '../styles/VideoCard.css';
-var Col = require('react-bootstrap/lib/Col');
+
 
 //Creates a card link to each video with info and highlights.
 class VideoCard extends React.Component {

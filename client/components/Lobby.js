@@ -2,7 +2,8 @@
 import React from 'react';
 import axios from 'axios';
 import VideoCard from './VideoCard';
-const Row = require('react-bootstrap/lib/Row');
+import { Row } from 'react-bootstrap';
+
 import '../styles/Lobby.css';
 
 //Responsible for grabbing initial video set information and rendering lobby page.
@@ -44,11 +45,11 @@ class Lobby extends React.Component {
         <div className="text-center">
           <span className="credits">
             written by 
-          <a style={{textDecoration:"none!important"}} href="https://quanchifootball.github.io">Jason Keum</a>
-            - 2018   Icons made by 
-          <a href="https://www.flaticon.com/authors/google" title="Google">Google</a>
+            <a style={{textDecoration:"none!important"}} href="https://quanchifootball.github.io">Jason Keum</a>
+            Icons made by 
+            <a href="https://www.flaticon.com/authors/google" title="Google">Google</a>
             and 
-          <a href="https://www.fontawesome.com/" title="Font Awesome">Font Awesome</a>
+            <a href="https://www.fontawesome.com/" title="Font Awesome">Font Awesome</a>
           </span>
         </div>
       </div>

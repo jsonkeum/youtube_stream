@@ -15,7 +15,7 @@ body {
     background-color: #111623!important;
     letter-spacing: 2px;
     border: 2px solid white;
-    transition-duration:0.3s;
+    transition-duration:0.25s;
     border-radius:4px;
     padding:0;
 }
@@ -28,7 +28,7 @@ body {
 .site-link {
   color:white;
   text-decoration: none!important;
-  transition-duration: 0.1s;
+  transition-duration: 0.25s;
 }
 .site-link:hover {
   color:#d1ffdf;

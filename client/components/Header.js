@@ -1,9 +1,10 @@
 //client/components/Header.js
 import React from 'react';
 import '../styles/Header.css';
-var Grid = require('react-bootstrap/lib/Grid');
-var Row = require('react-bootstrap/lib/Row');
-var Col = require('react-bootstrap/lib/Col');
+import {
+	Col,
+	Row
+} from 'react-bootstrap';
 
 //Lobby.js link and logout link.
 export default class Header extends React.Component {

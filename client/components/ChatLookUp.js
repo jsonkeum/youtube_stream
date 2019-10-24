@@ -2,12 +2,15 @@
 import React from 'react';
 import axios from 'axios';
 import '../styles/ChatLookUp.css';
-const Col = require('react-bootstrap/lib/Col');
-const Row = require('react-bootstrap/lib/Row');
-const Modal = require('react-bootstrap/lib/Modal');
-const Button = require('react-bootstrap/lib/Button');
-const FormControl = require('react-bootstrap/lib/FormControl');
-const FormGroup = require('react-bootstrap/lib/FormGroup');
+import {
+	Col,
+	Row,
+	Modal,
+	Button,
+	FormControl,
+	FormGroup
+} from 'react-bootstrap';
+
 
 //Responsible for extracing input value and sending message search requests to the server
 class ChatLookUp extends React.Component {
@@ -66,7 +69,7 @@ class ChatLookUp extends React.Component {
 		if(typeof userName === 'string') search = userName;
 		else search = document.getElementById("userName").value;
 		if(authed && search.length > 0){
-			axios.get(`${window.location.protocol}//${window.location.hostname}/getuserchats/${this.props.chatId}/${encodeURIComponent(search)}`)
+			axios.get(`${window.location.protocol}//${window.location.host}/getuserchats/${this.props.chatId}/${encodeURIComponent(search)}`)
 			.then(function(res){
 				if(res.data.found){
 					parent.setState({

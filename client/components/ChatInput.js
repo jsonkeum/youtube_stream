@@ -1,6 +1,7 @@
 //client/components/ChatInput.js
 import React from 'react';
 import axios from 'axios';
+
 import '../styles/ChatInput.css';
 
 //Responsible for reading input value and sending a message post request to youtube.

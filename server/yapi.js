@@ -27,9 +27,10 @@ class YAPI extends API {
 			"videoEmbeddable":"true",
 			"key":apiKey
 		}
+		
 		this.get(reqPath, reqParams, function(response){
 			callback(response.data.items);
-		});
+		})
 	}
 
 	/*

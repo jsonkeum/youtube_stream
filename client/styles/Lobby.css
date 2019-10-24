@@ -12,3 +12,13 @@
 .credits {
 	font-size:80%;
 }
+
+.credits > * {
+	margin-right: 4px;
+	margin-left: 4px;
+}
+
+.credits a {
+  color: palegreen;
+  text-decoration: none;
+}

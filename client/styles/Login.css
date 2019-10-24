@@ -10,12 +10,7 @@
   background-position: right top;
   background-image:url('/assets/images/btn_google_signin_light_normal_web@2x.png');
 }
-.signin:hover {
-  background-image:url('/assets/images/btn_google_signin_light_focus_web@2x.png');
-}
-.signin:active {
-  background-image:url('/assets/images/btn_google_signin_dark_focus_web@2x.png');
-}
+
 .login-title {
   font-family:"Bungee Inline", cursive;
   text-align:right;
@@ -48,6 +43,11 @@
   bottom:20px;
   left:0;
   right:0;
+}
+
+.credits a {
+  color: palegreen;
+  text-decoration: none;
 }
 @media screen and (max-width:767px){
   .login-title {

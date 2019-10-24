@@ -1,9 +1,8 @@
 //client/components/ChannelDetails.js
 import React from 'react';
-import axios from 'axios';
+import { Col, Row } from 'react-bootstrap';
+
 import '../styles/ChannelDetails.css';
-const Col = require('react-bootstrap/lib/Col');
-const Row = require('react-bootstrap/lib/Row');
 
 //receives channel info as prop from parent component and renders info
 class ChannelDetails extends React.Component {

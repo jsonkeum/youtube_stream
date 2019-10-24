@@ -147,7 +147,6 @@ class GAPI extends API {
 		the original request again.
 	*/
 	refreshCredentials(callback){
-		console.log("Refreshing credentials");
 		//endpoint path for token requests
 		let tokenPath = "https://www.googleapis.com/oauth2/v4/token"
 		

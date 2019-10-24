@@ -1,8 +1,9 @@
 //client/components/Login.js
 import React from 'react';
+import { Col, Row } from 'react-bootstrap';
+
 import '../styles/Login.css';
-const Col = require('react-bootstrap/lib/Col');
-const Row = require('react-bootstrap/lib/Row');
+
 
 //Login page '/auth' makes a call to the server to redirect to Google's consent page.
 const Login = () => (
@@ -23,8 +24,7 @@ const Login = () => (
 	  <div className="text-center">
           <span className="credits page-bottom">
             written by 
-          <a style={{textDecoration:"none",color:"palegreen"}} href="https://quanchifootball.github.io"> Jason Keum </a>
-            - 2018
+          	<a href="https://quanchifootball.github.io"> Jason Keum </a>
           </span>
       </div>
 	</div>

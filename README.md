@@ -7,6 +7,4 @@ This is a MERN (MongoDB, Express.js, React.js, Node.js) stack web application.
 
 Free icons used from Google and Font Awesome.
 
-
-
-written by Jason Keum 03/12/2018
+Use 'npm run web' to start the server then 'npm run webpack' to bundle client.
